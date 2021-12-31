@@ -4,8 +4,7 @@ const forEach = (array, callback) => {
       return;
     if (typeof callback != 'function')
       return;
-    let len = array.length;
-    while(i<len){
+    while(i<array.length){
       if(!array[i]){
         return;
       }
