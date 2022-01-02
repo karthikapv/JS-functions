@@ -11,3 +11,15 @@ const filter = (arr, callback) => {
     
     return filterFunction(arr, callback, index);
     }
+
+//code to test filter function
+
+const arr = [10,33,2,18,9,8,46,12,22];
+function lessThan20(num){
+    if(num<20) return num;
+}
+
+console.log(filter(arr,lessThan20));
+
+
+
