@@ -1,15 +1,22 @@
-const forEach = (array, callback) => {
+const forEach = (arr, callback) => {
     let i = 0;
-    if(!array.length)
+    if(!arr.length)
       return;
-    if (typeof callback != 'function')
-      return;
-    while(i<array.length){
-      if(!array[i]){
+    while(i<arr.length){
+      if(!arr[i]){
         return;
       }
-      callback(array[i], i, array);
+      callback(arr[i], i, arr);
       i += 1;
     }
     return undefined;
   };
+
+//code to test forEach function
+
+  const numbers = [65, 44, 12, 4];
+  function multiplyTen(item, index, arr) {
+    arr[index] = item * 10;
+  }
+  forEach(numbers, multiplyTen)
+  console.log(numbers);
