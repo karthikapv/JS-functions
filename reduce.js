@@ -1,4 +1,5 @@
 const reduce = (arr, reducer) => {  
+	if(arr.length == 0) return undefined;
 	let initialValue = 0; 
 	let accumulator = initialValue;        
 	for(let i=0;i<arr.length;i++)        
