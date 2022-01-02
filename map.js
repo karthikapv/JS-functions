@@ -1,8 +1,9 @@
 const map = (arr, callback) => {
 let index = 0; 
+const resultArray = [];
 const mapFunction = (arr, callback, index) => {
-    if(index==arr.length) return arr;
-        arr[index] = callback(arr[index]);
+    if(index==arr.length) return resultArray;
+        resultArray[index] = callback(arr[index]);
     return mapFunction(arr, callback, index+1);
 }
 return mapFunction(arr, callback, index);
@@ -15,4 +16,4 @@ function addTen(num){
     return (num+10);
 }
 
-console.log(map(arr,addTen)); 
+console.log(map(arr,addTen));
