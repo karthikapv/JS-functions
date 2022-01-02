@@ -1,4 +1,5 @@
 const map = (arr, callback) => {
+if(arr.length == 0) return [];
 let index = 0; 
 const resultArray = [];
 const mapFunction = (arr, callback, index) => {
