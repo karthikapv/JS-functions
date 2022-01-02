@@ -1,4 +1,5 @@
 const filter = (arr, callback) => {
+    if(arr.length == 0) return arr;
     let index = 0;
     const resultArray = [];
     const filterFunction = (arr, callback, index) => {
