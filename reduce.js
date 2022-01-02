@@ -1,14 +1,16 @@
-const reduce = (arr, callback) => {
- 	let initialValue = undefined;
- 	let result = arr[0];
- 	let index = 1;
+const reduce = (arr, reducer) => {  
+	let initialValue = 0; 
+	let accumulator = initialValue;        
+	for(let i=0;i<arr.length;i++)        
+		accumulator = reducer(accumulator, arr[i]);    
+	return accumulator;
+}
 
- 	const reduceArray = (arr, callback, index, result) => {
- 		if(index==arr.length) return result;
- 		result = callback(result, arr[index]);
- 		return reduceArray(arr, callback, index+1, result);
- 	}
-
- 	result = reduceArray(arr, callback, index, result);
- 	return initialValue ? initialValue+result : result;
- }
+ //code to test reduce function
+ const arr = [15.5, 2.3, 1.1, 4.7];
+ function roundSum(accumulator,arrayElement){
+	return accumulator + Math.round(arrayElement);
+}
+const sum = reduce(arr, roundSum);
+console.log(sum);
+ 
